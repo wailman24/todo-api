@@ -34,10 +34,4 @@ This is a simple **To-Do API** built with **Node.js, Express, and MongoDB**. Use
 ## 🔒 Middleware
 - **Auth Middleware** ensures users can only modify their own tasks.
 
-## 📝 License
-This project is open-source and available under the **MIT License**.
-
----
-
-Feel free to contribute and improve this API! 🚀
 
