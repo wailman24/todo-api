@@ -4,6 +4,8 @@ const config = require("config");
 const app = express();
 const users = require("./routes/user");
 const tasks = require("./routes/tasks");
+const cors = require("cors");
+app.use(cors());
 
 if (!config.get("jwtPrivateKey")) {
   console.log("jwtPrivateKey is not defined");
@@ -15,6 +17,7 @@ mongoose
   .catch((error) => console.log("couldn't connect ... ", error));
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use("/api/users", users);
 app.use("/api/tasks", tasks);
 

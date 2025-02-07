@@ -5,15 +5,18 @@ const Task = mongoose.model(
   "Task",
   new mongoose.Schema({
     title: { type: String, required: true },
-    descrip: { type: String },
     userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+    completed: {
+      type: Boolean,
+      required: true,
+    },
   })
 );
 
 function validatetask(task) {
   const schema = Joi.object({
     title: Joi.string().required(),
-    descrip: Joi.string(),
+    completed: Joi.bool(),
   });
 
   return schema.validate(task);

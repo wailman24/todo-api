@@ -26,7 +26,7 @@ router.post("/", auth, async (req, res) => {
 
   let task = new Task({
     title: req.body.title,
-    descrip: req.body.descrip,
+    completed: req.body.completed,
   });
   task.userId = req.user._id;
 
